@@ -5,6 +5,7 @@ import { getProfile, updateProfile } from "../controllers/Userprofile.js";
 import uploadCloud from "../middleware/uploadMiddleware.js";
 
 const router = express.Router();
+
 /**
  * @swagger
  * /api/register:
@@ -43,6 +44,7 @@ const router = express.Router();
  *         description: Bad request
  */
 router.post('/register', registerUser);
+
 /**
  * @swagger
  * /api/login:
@@ -69,7 +71,7 @@ router.post('/register', registerUser);
  *       401:
  *         description: Invalid credentials
  */
-router.post('/login', loginUser)
+router.post('/login', loginUser);
 
 /**
  * @swagger
@@ -80,8 +82,9 @@ router.post('/login', loginUser)
  *     responses:
  *       200:
  *         description: User logged out successfully
- */;
+ */
 router.post("/logout", logoutUser);
+
 /**
  * @swagger
  * /api/checkToken:
@@ -100,7 +103,6 @@ router.get("/checkToken", authMiddleware, (req, res) => {
   res.json({ user: req.user });
 });
 
-
 /**
  * @swagger
  * /api/profile:
@@ -113,9 +115,7 @@ router.get("/checkToken", authMiddleware, (req, res) => {
  *       200:
  *         description: User profile returned
  */
-
 router.get("/profile", authMiddleware, getProfile);
-
 
 /**
  * @swagger
@@ -142,7 +142,6 @@ router.get("/profile", authMiddleware, getProfile);
  *       200:
  *         description: Profile updated
  */
-
 router.put("/profile", authMiddleware, uploadCloud.single("profilePic"), updateProfile);
 
 export default router;
