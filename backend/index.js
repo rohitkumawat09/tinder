@@ -14,7 +14,7 @@ const port = process.env.PORT;
 connectDB();
 
 const allowedOrigins = [
-  process.env.DEPLOYED_FRONTEND_URL,
+  process.env.BaCKEND_URL,
   process.env.FRONTEND_URL,
   process.env.LOCAL_URL,
   process.env.VERCEL_URL,

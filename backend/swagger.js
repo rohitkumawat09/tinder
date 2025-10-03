@@ -4,12 +4,12 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'E-Commerce API',
+      title: 'Tinder Clone API',
       version: '1.0.0',
-      description: 'API documentation for the E-Commerce platform',
+      description: 'API documentation for Tinder-like application',
     },
     servers: [
-    { url: process.env.DEPLOYED_FRONTEND_URL || process.env.LOCAL_URL }
+    { url: process.env.BACKEND_URL || process.env.LOCAL_URL }
     ],
     components: {
       securitySchemes: {
