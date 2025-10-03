@@ -9,7 +9,7 @@ const options = {
       description: 'API documentation for Tinder-like application',
     },
     servers: [
-    { url: process.env.BACKEND_URL || process.env.LOCAL_URL }
+    { url: process.env.BACKEND_URL || process.env.FRONTEND_URL }
     ],
     components: {
       securitySchemes: {

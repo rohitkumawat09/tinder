@@ -22,21 +22,7 @@ const router = express.Router();
  *               - name
  *               - email
  *               - password
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *               phone:
- *                 type: string
- *               dob:
- *                 type: string
- *                 format: date
- *               gender:
- *                 type: string
- *                 enum: [male, female, other]
+ *          
  *     responses:
  *       201:
  *         description: User registered successfully

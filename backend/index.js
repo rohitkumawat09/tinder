@@ -14,13 +14,10 @@ const port = process.env.PORT;
 connectDB();
 
 const allowedOrigins = [
-  process.env.BaCKEND_URL,
+  process.env.BACKEND_URL,
   process.env.FRONTEND_URL,
-  process.env.LOCAL_URL,
-  process.env.VERCEL_URL,
   "http://localhost:5173",
   "http://localhost:4000",
-  "http://127.0.0.1:5500",
   "https://tinder-731x.onrender.com",
 ];
 
@@ -36,7 +33,10 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+// Swagger UI
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// alias for convenience
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
